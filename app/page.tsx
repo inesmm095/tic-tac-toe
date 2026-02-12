@@ -230,40 +230,46 @@ export default function Home() {
         <StepIndicator step={step} />
 
         {step === 1 && (
-          <StepMode
-            gameMode={gameMode}
-            onSelectMode={(mode) => setGameMode(mode)}
-            onContinue={() => setStep(2)}
-          />
+          <div className="step-vertical-transition">
+            <StepMode
+              gameMode={gameMode}
+              onSelectMode={(mode) => setGameMode(mode)}
+              onContinue={() => setStep(2)}
+            />
+          </div>
         )}
 
         {step === 2 && (
-          <StepNames
-            gameMode={gameMode}
-            playerX={playerX}
-            playerO={playerO}
-            singlePlayerName={singlePlayerName}
-            onChangePlayerX={setPlayerX}
-            onChangePlayerO={setPlayerO}
-            onChangeSinglePlayerName={setSinglePlayerName}
-            onBackToMode={handleBackToMode}
-            onStartGame={startGameFromSetup}
-          />
+          <div className="step-vertical-transition">
+            <StepNames
+              gameMode={gameMode}
+              playerX={playerX}
+              playerO={playerO}
+              singlePlayerName={singlePlayerName}
+              onChangePlayerX={setPlayerX}
+              onChangePlayerO={setPlayerO}
+              onChangeSinglePlayerName={setSinglePlayerName}
+              onBackToMode={handleBackToMode}
+              onStartGame={startGameFromSetup}
+            />
+          </div>
         )}
 
         {step === 3 && (
-          <GameStep
-            gameMode={gameMode}
-            board={board}
-            currentPlayer={currentPlayer}
-            winner={winner}
-            trimmedPlayerX={trimmedPlayerX}
-            trimmedPlayerO={trimmedPlayerO}
-            statusMessage={statusMessage}
-            onCellClick={handleCellClick}
-            onPlayAgain={startGameFromSetup}
-            onChangeSetup={handleBackToNames}
-          />
+          <div className="step-vertical-transition">
+            <GameStep
+              gameMode={gameMode}
+              board={board}
+              currentPlayer={currentPlayer}
+              winner={winner}
+              trimmedPlayerX={trimmedPlayerX}
+              trimmedPlayerO={trimmedPlayerO}
+              statusMessage={statusMessage}
+              onCellClick={handleCellClick}
+              onPlayAgain={startGameFromSetup}
+              onChangeSetup={handleBackToNames}
+            />
+          </div>
         )}
       </main>
     </div>
