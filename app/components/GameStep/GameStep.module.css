@@ -1,0 +1,97 @@
+.root {
+  display: block;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #4b5563;
+  margin-bottom: 0.75rem;
+}
+
+.modeTitle {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.players {
+  margin-top: 0.25rem;
+  font-size: 0.7rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+@media (min-width: 640px) {
+  .actions {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.secondaryButton,
+.primaryButton {
+  border-radius: 9999px;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.secondaryButton {
+  border: 1px solid #d4d4d8;
+  background-color: white;
+  color: #111827;
+}
+
+.primaryButton {
+  border: none;
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+.status {
+  margin-bottom: 0.75rem;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.boardWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.cell {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d4d4d8;
+  background-color: #f9fafb;
+  font-size: 1.875rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cell:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
